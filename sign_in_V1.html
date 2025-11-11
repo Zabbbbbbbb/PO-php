@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sign in V1</title>
+        <!--<link rel="icon" href="new.png" type="image/png" sizes="32x32">-->
+        <!-- commentaar html -->
+        <style>
+            html, body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: #404040;
+            }
+
+            .hidden {
+                display: none !important;
+                pointer-events: none !important;
+            }
+            
+            /*
+            Note that you only needs to edit the config to customize the button!
+
+            .plusButton {
+                --plus_sideLength: 2.5rem;
+                --plus_topRightTriangleSideLength: 0.9rem;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid white;
+                width: var(--plus_sideLength);
+                height: var(--plus_sideLength);
+                background-color: #000000;
+                overflow: hidden;
+                top: 5%;
+                left: 90%;
+            }
+
+            .plusButton::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+                border-style: solid;
+                border-color: transparent white transparent transparent;
+                transition-timing-function: ease-in-out;
+                transition-duration: 0.2s;
+            }
+
+            .plusButton:hover {
+                cursor: pointer;
+            }
+
+            .plusButton:hover::before {
+                --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+            }
+
+            .plusButton:focus-visible::before {
+                --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+            }
+
+            .plusButton>.plusIcon {
+                fill: white;
+                width: calc(var(--plus_sideLength) * 0.7);
+                height: calc(var(--plus_sideLength) * 0.7);
+                z-index: 1;
+                transition-timing-function: ease-in-out;
+                transition-duration: 0.2s;
+            }
+
+            .plusButton:hover>.plusIcon {
+                fill: black;
+                transform: rotate(180deg);
+            }
+
+            .plusButton:focus-visible>.plusIcon {
+                fill: black;
+                transform: rotate(180deg);
+            }*/
+            /*Center div:*/
+            .Sign_in_field{
+                position: absolute;
+                width: 50vw;
+                height: 100vh;
+                left: 25vw;
+                top: 0;
+                background-color: #606060;
+                border-radius: 12.5%;
+                text-align: center;
+
+                display: flex;          /* Arrange images in a row */
+                flex-wrap: wrap;      /* Keep them in one line */
+                gap: 1vw;               /* Space between images */
+                overflow-x: hidden;       /* no horizontal scrolling */
+                overflow-y: auto;     /* vertical scroll */
+                scroll-behavior: smooth;
+            }
+
+            .title_sign_in{
+                position: absolute;
+                left: 42.5%;
+                top: 0%;
+                font-size: 5vh;
+                color: #c0c0c0;
+            }
+
+            /*checkboxes:*/
+            .check {
+                cursor: pointer;
+                position: absolute;
+                margin: auto;
+                width: 1.5vw;
+                height: 1.5vw;
+                -webkit-tap-highlight-color: transparent;
+                transform: translate3d(0, 0, 0);
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check:before {
+                content: "";
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: 3.5vw;
+                height: 3.5vw;
+                border-radius: 50%;
+                background: rgba(34,50,84,0.03);
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check svg {
+                position: relative;
+                z-index: 1;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke: #c8ccd4;
+                stroke-width: 1.5;
+                transform: translate3d(0, 0, 0);
+                transition: all 0.2s ease;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check svg path {
+                stroke-dasharray: 60;
+                stroke-dashoffset: 0;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check svg polyline {
+                stroke-dasharray: 22;
+                stroke-dashoffset: 66;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check:hover:before {
+                opacity: 1;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check:hover svg {
+                stroke: #4285f4;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .cbx_class:checked + .check svg {
+                stroke: #4285f4;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .cbx_class:checked + .check svg path {
+                stroke-dashoffset: 60;
+                transition: all 0.3s linear;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .cbx_class:checked + .check svg polyline {
+                stroke-dashoffset: 42;
+                transition: all 0.2s linear;
+                transition-delay: 0.15s;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            /*Buttons:*/
+            .sign_in_btn{
+                border-radius: 10px;
+                position: absolute;
+                width: 30%;
+                height: 10%;
+                left: 35%;
+                top: 50%;
+                color: #404040;
+                background-color: #808080;
+            }
+
+            .sign_in_btn:hover {
+                color: #606060;
+                background-color: #A0A0A0;
+            }
+
+            .new_account_btn{
+                border-radius: 10px;
+                position: absolute;
+                width: 30%;
+                height: 10%;
+                left: 35%;
+                top: 65%;
+                color: #404040;
+                background-color: #808080;
+            }
+
+            .new_account_btn:hover {
+                color: #606060;
+                background-color: #A0A0A0;
+            }
+
+            .guest{
+                border-radius: 10px;
+                position: absolute;
+                width: 30%;
+                height: 10%;
+                left: 35%;
+                top: 80%;
+                color: #404040;
+                background-color: #808080;
+            }
+
+            .guest:hover {
+                color: #606060;
+                background-color: #A0A0A0;
+            }
+
+
+            /*Inputs:*/
+            .input-container1 {
+                position: absolute;
+                width: 30%;
+                top: 20%;
+                left: 35%;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container2 {
+                position: absolute;
+                width: 30%;
+                top: 35%;
+                left: 35%;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 input[type="text"] {
+                font-size: 2.25vh;
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid #c0c0c0;
+                padding: 5px 0;
+                background-color: transparent;
+                outline: none;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 .label {
+                position: absolute;
+                top: 0;
+                left: 25%;
+                color: #c0c0c0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 input[type="text"]:focus ~ .label,
+            .input-container1 input[type="text"]:valid ~ .label {
+                top: -20px;
+                left: 27.5%;
+                font-size: 2vh;
+                color: #333;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 input[type="text"]:focus ~ .underline,
+            .input-container1 input[type="text"]:valid ~ .underline {
+                transform: scaleX(1);
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+        </style>
+    </head>
+    <body>
+        <!--<div tabindex="0" class="plusButton">
+            <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                <g mask="url(#mask0_21_345)">
+                <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                </g>
+            </svg>
+        </div>-->
+
+        <div class="Sign_in_field">
+            <div class="input-container1">
+                <input type="text" id="input1" required="">
+                <label for="input" class="label">Enter username</label>
+            </div> <!--Src: https://uiverse.io/Satwinder04/pink-bat-77-->
+
+            <div class="input-container2 input-container1">
+                <input type="text" id="input2" required="">
+                <label for="input" class="label">Enter password</label>
+            </div> <!--Src: https://uiverse.io/Satwinder04/pink-bat-77-->
+
+            <h1 class="title_sign_in">Sign in</h1>
+            <button class="sign_in_btn">Sign in</button>
+            <button class="new_account_btn">New account</button>
+            <button class="guest">Sign in as guest</button>
+            <input type="checkbox" id="cbx1" class="cbx_class" style="display: none;">
+            <label for="cbx1" class="check" style="left: 10%; top: 10%;">
+                <svg width="1.5vw" height="1.5vw" viewBox="0 0 18 18">
+                    <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                    <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+            </label>
+
+            <input type="checkbox" id="cbx2" class="cbx_class" style="display: none;">
+            <label for="cbx2" class="check" style="left: 10%; top: 20%;">
+                <svg width="1.5vw" height="1.5vw" viewBox="0 0 18 18">
+                    <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                    <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+            </label>
+
+            <input type="checkbox" id="cbx3" class="cbx_class" style="display: none;">
+            <label for="cbx3" class="check" style="left: 10%; top: 30%;">
+                <svg width="1.5vw" height="1.5vw" viewBox="0 0 18 18">
+                    <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                    <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+            </label>
+        </div>
+
+        <script>
+            let checkboxes = document.querySelectorAll(".cbx_class");
+            let checkboxnr = [];
+            checkboxes.forEach(box => {
+                checkboxnr.push(box.id);
+                box.addEventListener("change", () => {
+                    if (box.checked) {
+                        console.log(`${box.id} was checked`);
+                        //checked(box.id);
+                    } else {
+                        console.log(`${box.id} was unchecked`);
+                        //unchecked(box.id);
+                    }
+                });
+            });
+            document.querySelectorAll(".check").forEach(item=>{item.classList.add('hidden');});
+        </script>
+    </body>
+</html>
