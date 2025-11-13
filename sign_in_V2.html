@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sign in V2</title>
+        <!--<link rel="icon" href="new.png" type="image/png" sizes="32x32">-->
+        <!-- commentaar html -->
+        <style>
+            html, body {
+                overflow: hidden;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: #404040;
+            }
+
+            .hidden {
+                display: none !important;
+                pointer-events: none !important;
+            }
+            
+            /*Center div:*/
+            .Sign_in_field{
+                position: absolute;
+                width: 50vw;
+                height: 100vh;
+                left: 25vw;
+                top: 0;
+                background-color: #606060;
+                border-radius: 12.5%;
+                text-align: center;
+
+                display: flex;          /* Arrange images in a row */
+                flex-wrap: wrap;      /* Keep them in one line */
+                gap: 1vw;               /* Space between images */
+                overflow-x: hidden;       /* no horizontal scrolling */
+                overflow-y: auto;     /* vertical scroll */
+                scroll-behavior: smooth;
+            }
+
+            .title_sign_in{
+                cursor: default;
+                position: absolute;
+                text-align: center;
+                left: 0%;
+                top: 0%;
+                width: 100%;
+                font-size: 5vh;
+                color: #c0c0c0;
+            }
+
+            /*checkboxes:*/
+            .check {
+                cursor: pointer;
+                position: absolute;
+                margin: auto;
+                width: 1.5vw;
+                height: 1.5vw;
+                -webkit-tap-highlight-color: transparent;
+                transform: translate3d(0, 0, 0);
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check:before {
+                content: "";
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: 3.5vw;
+                height: 3.5vw;
+                border-radius: 50%;
+                background: rgba(34,50,84,0.03);
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check svg {
+                position: relative;
+                z-index: 1;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke: #c8ccd4;
+                stroke-width: 1.5;
+                transform: translate3d(0, 0, 0);
+                transition: all 0.2s ease;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check svg path {
+                stroke-dasharray: 60;
+                stroke-dashoffset: 0;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check svg polyline {
+                stroke-dasharray: 22;
+                stroke-dashoffset: 66;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check:hover:before {
+                opacity: 1;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .check:hover svg {
+                stroke: #4285f4;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .cbx_class:checked + .check svg {
+                stroke: #4285f4;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .cbx_class:checked + .check svg path {
+                stroke-dashoffset: 60;
+                transition: all 0.3s linear;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .cbx_class:checked + .check svg polyline {
+                stroke-dashoffset: 42;
+                transition: all 0.2s linear;
+                transition-delay: 0.15s;
+            } /*Src: https://uiverse.io/mrhyddenn/slippery-bear-64*/
+
+            .cbx1_txt{
+                position: absolute;
+                left: 40%;
+                top: 49.6%;
+                height: 5%;
+                text-align: left;
+                font-size: 3vh;
+            }
+
+            .cbx2_txt{
+                position: absolute;
+                left: 40%;
+                top: 62.1%;
+                height: 5%;
+                text-align: left;
+                font-size: 3vh;
+            }
+
+            .cbx3_txt{
+                position: absolute;
+                left: 40%;
+                top: 74.6%;
+                height: 5%;
+                text-align: left;
+                font-size: 3vh;
+            }
+
+            /*Buttons:*/
+            .sign_in_btn{
+                cursor: pointer;
+                border-radius: 10px;
+                position: absolute;
+                width: 30%;
+                height: 10%;
+                left: 35%;
+                top: 50%;
+                color: #404040;
+                background-color: #808080;
+            }
+
+            .sign_in_btn:hover {
+                color: #606060;
+                background-color: #A0A0A0;
+            }
+
+            .new_account_btn{
+                cursor: pointer;
+                border-radius: 10px;
+                position: absolute;
+                width: 30%;
+                height: 10%;
+                left: 35%;
+                top: 62.5%;
+                color: #404040;
+                background-color: #808080;
+            }
+
+            .new_account_btn:hover {
+                color: #606060;
+                background-color: #A0A0A0;
+            }
+
+            .guest{
+                cursor: pointer;
+                border-radius: 10px;
+                position: absolute;
+                width: 30%;
+                height: 10%;
+                left: 35%;
+                top: 75%;
+                color: #404040;
+                background-color: #808080;
+            }
+
+            .guest:hover {
+                color: #606060;
+                background-color: #A0A0A0;
+            }
+
+            .finish_profile{
+                cursor: pointer;
+                border-radius: 10px;
+                position: absolute;
+                width: 30%;
+                height: 10%;
+                left: 35%;
+                top: 87.5%;
+                color: #404040;
+                background-color: #808080;
+            }
+
+            .finish_profile:hover {
+                color: #606060;
+                background-color: #A0A0A0;
+            }
+
+
+            /*Inputs:*/
+            .input-container1 {
+                position: absolute;
+                width: 30%;
+                top: 20%;
+                left: 35%;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container2 {
+                position: absolute;
+                width: 30%;
+                top: 35%;
+                left: 35%;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 input[type="text"] {
+                font-size: 2.25vh;
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid #c0c0c0;
+                padding: 5px 0;
+                background-color: transparent;
+                outline: none;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 .label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                justify-content: center;
+                color: #c0c0c0;
+                transition: all 0.3s ease;
+                pointer-events: none;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 input[type="text"]:focus ~ .label,
+            .input-container1 input[type="text"]:valid ~ .label {
+                top: -20px;
+                left: 0;
+                font-size: 2vh;
+                color: #404040;
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+
+            .input-container1 input[type="text"]:focus ~ .underline,
+            .input-container1 input[type="text"]:valid ~ .underline {
+                transform: scaleX(1);
+            } /*Src: https://uiverse.io/Satwinder04/pink-bat-77*/
+        </style>
+    </head>
+    <body>
+        <!--<div tabindex="0" class="plusButton">
+            <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                <g mask="url(#mask0_21_345)">
+                <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                </g>
+            </svg>
+        </div>-->
+
+        <div class="Sign_in_field">
+            <div class="input-container1">
+                <input type="text" id="input1" required="">
+                <label for="input" class="label">Enter username</label>
+            </div> <!--Src: https://uiverse.io/Satwinder04/pink-bat-77-->
+
+            <div class="input-container2 input-container1">
+                <input type="text" id="input2" required="">
+                <label for="input" class="label">Enter password</label>
+            </div> <!--Src: https://uiverse.io/Satwinder04/pink-bat-77-->
+
+            <h1 class="title_sign_in">Sign in</h1>
+            <button class="sign_in_btn">Sign in</button>
+            <button class="new_account_btn">New account</button>
+            <button class="guest">Sign in as guest</button>
+            <button class="finish_profile hidden">Finish profile</button>
+            <input type="checkbox" id="cbx1" class="cbx_class" style="display: none;">
+            <label for="cbx1" class="check" style="left: 35%; top: 53%;">
+                <svg width="1.5vw" height="1.5vw" viewBox="0 0 18 18">
+                    <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                    <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+            </label>
+            <p class="cbx1_txt">private profile</p>
+
+            <input type="checkbox" id="cbx2" class="cbx_class" style="display: none;">
+            <label for="cbx2" class="check" style="left: 35%; top: 65.5%;">
+                <svg width="1.5vw" height="1.5vw" viewBox="0 0 18 18">
+                    <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                    <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+            </label>
+            <p class="cbx2_txt">apply to be moderator</p>
+
+            <input type="checkbox" id="cbx3" class="cbx_class" style="display: none;">
+            <label for="cbx3" class="check" style="left: 35%; top: 78%;">
+                <svg width="1.5vw" height="1.5vw" viewBox="0 0 18 18">
+                    <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                    <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+            </label>
+            <p class="cbx3_txt">turn on bumpscosity</p>
+        </div>
+
+        <script>
+            let checkboxes = document.querySelectorAll(".cbx_class");
+            let checkboxnr = [];
+            checkboxes.forEach(box => {
+                checkboxnr.push(box.id);
+                box.addEventListener("change", () => {
+                    if (box.checked) {
+                        checked(box.id);
+                    } else {
+                        unchecked(box.id);
+                    }
+                });
+            });
+            document.querySelector(".sign_in_btn").classList.remove("hidden");
+            document.querySelector(".new_account_btn").classList.remove("hidden");
+            document.querySelector(".guest").classList.remove("hidden");
+            document.querySelector(".title_sign_in").innerHTML = "Sign in";
+            document.querySelectorAll(".check").forEach(item=>{item.classList.add('hidden');});
+            document.querySelector(".cbx1_txt").classList.add("hidden");
+            document.querySelector(".cbx2_txt").classList.add("hidden");
+            document.querySelector(".cbx3_txt").classList.add("hidden");
+            document.querySelector(".finish_profile").classList.add("hidden");
+
+            document.querySelector(".sign_in_btn").addEventListener("click", ()=>{
+                //check if password matches username, then store both of them as current user
+                //if moderator: open moderator site
+                //else: open regular site
+            });
+
+            document.querySelector(".new_account_btn").addEventListener("click", ()=>{
+                //hide "sign_in_btn", "guest" and "new_account_btn"
+                //change text "sign in" to "New profile"
+                //show button "finish profile settings"
+                //show checkboxes + text -> apply to be moderator
+                //-> private profile
+                //-> turn on bumpscosity
+
+                document.querySelector(".sign_in_btn").classList.add("hidden");
+                document.querySelector(".new_account_btn").classList.add("hidden");
+                document.querySelector(".guest").classList.add("hidden");
+                document.querySelector(".title_sign_in").innerHTML = "New profile";
+
+                document.querySelectorAll(".check").forEach(item=>{item.classList.remove('hidden');});
+                document.querySelector(".cbx1_txt").classList.remove("hidden");
+                document.querySelector(".cbx1_txt").style.color = "#404040";
+                document.querySelector(".cbx2_txt").classList.remove("hidden");
+                document.querySelector(".cbx2_txt").style.color = "#404040";
+                document.querySelector(".cbx3_txt").classList.remove("hidden");
+                document.querySelector(".cbx3_txt").style.color = "#404040";
+                document.querySelector(".finish_profile").classList.remove("hidden");
+
+                document.querySelector(".finish_profile").addEventListener("click", ()=>{
+                    let temp_username = document.getElementById("input1").value;
+                    let temp_password = document.getElementById("input2").value;
+                    let private_profile = false;
+                    let moderator_application = false;
+                    let bumpscosity = false;
+                    if(document.getElementById("cbx1").checked){
+                        private_profile = true;
+                    }
+                    if(document.getElementById("cbx2").checked){
+                        moderator_application = true;
+                    }
+                    if(document.getElementById("cbx3").checked){
+                        bumpscosity = true;
+                    };
+                    if(temp_password == "" || temp_username == ""){ //or if the username already exists!
+                        let btn = document.querySelector(".finish_profile");
+                        btn.style.color = "#E00000";
+                        btn.style.backgroundColor = "#800000";
+                        btn.innerHTML = "*Invalid username or password!"
+                        setTimeout(() => {
+                            btn.style.color = "#404040";
+                            btn.style.backgroundColor = "#808080";
+                            btn.innerHTML = "Finish profile";
+                        }, 750);
+                    }
+                    else{
+                        console.log("password: " + temp_password);
+                        console.log("username: " + temp_username);
+                        console.log("private profile: " + private_profile);
+                        console.log("applied to be moderator: " + moderator_application);
+                        console.log("bumpscosity turned on: " + bumpscosity);
+                    }
+                });
+                //check if username exists yet, if not: store password and username store both of them as current user
+                //open regular site
+            });
+
+            document.querySelector(".guest").addEventListener("click", ()=>{
+                //idk
+            });
+
+            function checked(EyeD){
+                if(EyeD == "cbx1"){
+                    document.querySelector(".cbx1_txt").style.color = "#C0C0C0";
+                }
+                else if(EyeD == "cbx2"){
+                    document.querySelector(".cbx2_txt").style.color = "#C0C0C0";
+                }
+                else if(EyeD == "cbx3"){
+                    document.querySelector(".cbx3_txt").style.color = "#C0C0C0";
+                }
+            }
+
+            function unchecked(EyeD){
+                if(EyeD == "cbx1"){
+                    document.querySelector(".cbx1_txt").style.color = "#404040";
+                }
+                else if(EyeD == "cbx2"){
+                    document.querySelector(".cbx2_txt").style.color = "#404040";
+                }
+                else if(EyeD == "cbx3"){
+                    document.querySelector(".cbx3_txt").style.color = "#404040";
+                }
+            }
+        </script>
+    </body>
+</html>
