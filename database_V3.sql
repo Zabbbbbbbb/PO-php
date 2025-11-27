@@ -6,7 +6,14 @@ CREATE TABLE `folders` (
 
 CREATE TABLE `pagina` (
   `titelpagina` varchar(255) PRIMARY KEY,
-  `Inhoud` varchar(255),
+  `square1_type` varchar(255),
+  `square2_type` varchar(255),
+  `square3_type` varchar(255),
+  `square4_type` varchar(255),
+  `square1_inhoud` varchar(255),
+  `square2_inhoud` varchar(255),
+  `square3_inhoud` varchar(255),
+  `square4_inhoud` varchar(255),
   `afbeeldingen_posities` varchar(255),
   `eigenaar` varchar(255)
 );
