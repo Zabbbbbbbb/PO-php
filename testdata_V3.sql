@@ -17,33 +17,16 @@ INSERT INTO `folders` (`paginas`, `titel`, `eigenaar`) VALUES
 -- Testdata voor tabel: afbeeldingen
 INSERT INTO `afbeeldingen` (`titel`, `data`, `eigenaar`) VALUES
 ('foto1', 0x89504E470D0A1A0A0000000D49484452000000010000000108060000001F15C4890000000A49444154789C636000000200010005FE02FEA7E64FBA0000000049454E44AE426082, 'admin'),
-
 ('foto2', 0x89504E470D0A1A0A0000000D494844520000000100000001080200000090F4FA0B0000000A49444154789C636000000200010005FE02FEA7E64FBA0000000049454E44AE426082, 'johan'),
-
 ('foto3', 0x89504E470D0A1A0A0000000D49484452000000010000000108030000006E21D4060000000A49444154789C636000000200010005FE02FEA7E64FBA0000000049454E44AE426082, 'emma'),
-
 ('cvfoto', 0x89504E470D0A1A0A0000000D4948445200000001000000010804000000A7D3E1F90000000A49444154789C636000000200010005FE02FEA7E64FBA0000000049454E44AE426082, 'johan'),
-
 ('afbeelding1', 0x89504E470D0A1A0A0000000D4948445200000001000000010805000000B2C7E9FA0000000A49444154789C636000000200010005FE02FEA7E64FBA0000000049454E44AE426082, 'sophie'),
-
 ('pdficoon', 0x89504E470D0A1A0A0000000D4948445200000001000000010806000000C3D4E7F90000000A49444154789C636000000200010005FE02FEA7E64FBA0000000049454E44AE426082, 'sophie');
 
 -- Testdata voor tabel: pagina
-INSERT INTO `pagina` (`titelpagina`, `Inhoud`, `afbeeldingen_posities`, `eigenaar`) VALUES
-('home', 'Welkom op de homepage!', 'banner:top,logo:left', 'admin'),
-('about', 'Over ons bedrijf en missie.', 'foto1:right', 'admin'),
-('contact', 'Neem contact met ons op via e-mail of telefoon.', 'icon:top', 'admin'),
-
-('portfolio', 'Bekijk mijn werk en projecten.', 'foto1:left,foto2:right', 'johan'),
-('cv', 'Mijn opleidingen en ervaring.', 'cvfoto:top', 'johan'),
-('projecten', 'Overzicht van lopende projecten.', 'schema:bottom', 'johan'),
-
-('blog1', 'Eerste blog over reizen.', 'foto1:top', 'emma'),
-('blog2', 'Tweede blog over koken.', 'foto2:left', 'emma'),
-('blog3', 'Derde blog over programmeren.', 'foto3:right', 'emma'),
-
-('handleiding', 'Stappenplan voor installatie.', 'afbeelding1:top', 'sophie'),
-('voorwaarden', 'Gebruiksvoorwaarden van de site.', 'pdficoon:right', 'sophie'),
-
-('recept1', 'Pasta met pesto recept.', 'foto1:left', 'milan'),
-('recept2', 'Brownies recept.', 'foto2:top', 'milan');
+INSERT INTO `pagina` (`titelpagina`, `square1_type`, `square2_type`, `square3_type`, `square4_type`, `square1_inhoud`, `square2_inhoud`, `square3_inhoud`, `square4_inhoud`, `eigenaar`) VALUES
+('about', 'text', 'text', 'image', 'image', 'Dit is de about-pagina van onze site.', 'Hier lees je meer over wie we zijn.', 'teamfoto', 'kantoorgebouw', 'emma'),
+('contact', 'image', 'text', 'text', 'image', 'kaart-locatie', 'Neem gerust contact met ons op.', 'We reageren meestal binnen 24 uur.', 'telefoon-icoon', 'johan'),
+('galerij', 'image', 'image', 'image', 'text', 'landschap1', 'stad2', 'dierenfoto3', 'Welkom in de galerij! Bekijk onze mooiste beelden.', 'milan'),
+('nieuws', 'text', 'image', 'text', 'image', 'Welkom bij het laatste nieuws.', 'breaking-news-foto', 'Hier verzamelen we updates en artikelen.', 'krant-icoon', 'admin'),
+('services', 'text', 'text', 'image', 'text', 'Onze diensten zijn gericht op kwaliteit.', 'We bieden meerdere opties aan.', 'service-icon', 'Neem contact op voor meer informatie.', 'sophie');
