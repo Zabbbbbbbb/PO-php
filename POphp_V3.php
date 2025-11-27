@@ -431,7 +431,7 @@
             <div class="profile_settings_item" id="ps1"><p><u>username:</u><br>guest1</p></div>
             <div class="profile_settings_item" id="ps2">a</div>
             <div class="profile_settings_item" id="ps3" style="cursor:pointer;"><p>profile settings</p></div>
-            <a href="http://localhost/sign_in_phpV2.php" id="ps4" style="text-decoration: none;color:inherit;"><div class="profile_settings_item" style="cursor:pointer;"><p>log out</p></div></a>
+            <a href="http://localhost/sign_in_phpV4.php" id="ps4" style="text-decoration: none;color:inherit;"><div class="profile_settings_item" style="cursor:pointer;"><p>log out</p></div></a>
         </div>
         <div class="new_page hidden"></div>
 
@@ -927,4 +927,5 @@
             }
         </script>
     </body>
+
 </html>
