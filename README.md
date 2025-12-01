@@ -5,6 +5,7 @@
 In dit project hebben we geleerd hoe je met PHP en een database een website kunt maken die informatie kan opslaan, veranderen en weer laten zien.
 
 Zeb:
+In dit project heb ik geleerd hoe SVG's werken in javascript, hoe je variabelen uit javascript naar PHP kan sturen, hoe je variabelen van PHP kan opslaan in je javascript, hoe je met PHP data via SQL uit je database kan ophalen en hoe je data uit PHP in je database kan opslaan via SQL.
 
 Luke:
 Ik heb geleerd hoe je PHP gebruikt om informatie die PHP teruggeeft op de website laat zien. Ook snap ik de basis van php en het ophalen va informatie uit de database
@@ -36,6 +37,7 @@ Ook kozen we ervoor om sommige ideeën uit online voorbeelden en de oude project
 4. Hoe kijken we terug op onze inzet?
 
 Zeb:
+Ik heb de ingewikkelde onderdelen gedaan en ben een stuk verbeterd in zowel javascript, als css, als SQL, als PHP.
 
 Luke:
 Ik heb de onderdelen gedaan die ik snapte en ik snap nu veel beter hoe ik PHP moet toepassen op een echte website. 
@@ -47,7 +49,7 @@ https://uiverse.io/mrhyddenn/slippery-bear-64
 
 https://www.w3schools.com/php/
 
-ChatGPT (voor uitleg, voorbeelden en controle)
+ChatGPT (voor voorbeelden en controle)
 
 
 Om onze website te gebruiken kan je inloggen als gast of op een bestaand account inloggen. Elk account kan de toegevoegde fotos en berichten zien van andere account maar kan ze niet verwijderen. Je kan wel je eigen fotos verwijderen. Hier zijn een aantal accounts waarop ingelogd kan worden:
@@ -56,3 +58,8 @@ Om onze website te gebruiken kan je inloggen als gast of op een bestaand account
 3. naam: johan ww: wachtwoord1
 4. naam: milan ww: test123
 5. naam: sophie ww: securepass
+
+User stories:
+1. Als ingelogde gebruiker wil ik een nieuwe pagina aanmaken zodat ik inhoud kan delen met anderen.
+2. Als gebruiker wil ik een afbeelding uploaden naar een pagina zodat mijn pagina visueel aantrekkelijker wordt.
+3. Als gebruiker wil ik kunnen zoeken op pagina’s zodat ik snel de inhoud kan vinden die ik nodig heb.
