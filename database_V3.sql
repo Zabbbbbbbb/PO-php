@@ -10,10 +10,10 @@ CREATE TABLE `pagina` (
   `square2_type` varchar(255),
   `square3_type` varchar(255),
   `square4_type` varchar(255),
-  `square1_inhoud` varchar(255),
-  `square2_inhoud` varchar(255),
-  `square3_inhoud` varchar(255),
-  `square4_inhoud` varchar(255),
+  `square1_inhoud` text,
+  `square2_inhoud` text,
+  `square3_inhoud` text,
+  `square4_inhoud` text,
   `eigenaar` varchar(255)
 );
 
