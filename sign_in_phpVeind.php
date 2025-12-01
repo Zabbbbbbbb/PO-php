@@ -320,7 +320,7 @@
             $pass = '';
             $db = 'po_webapp';
 
-            // Verbind met database
+            //Verbind met database
             $conn = new mysqli($host, $user, $pass, $db);
 
             if ($conn->connect_error) {
@@ -483,4 +483,5 @@
             }
         </script>
     </body>
+
 </html>
