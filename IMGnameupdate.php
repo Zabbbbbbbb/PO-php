@@ -1,4 +1,5 @@
 <?php
+//beetje hetzelfde als al die andere php bestanden
 //read JSON data
 $data = json_decode(file_get_contents("php://input"), true);
 
