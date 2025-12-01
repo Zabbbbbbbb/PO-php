@@ -11,7 +11,7 @@ if (!isset($_FILES["image"])) {
 
 $file = $_FILES["image"];
 
-//Create uploads folder if needed
+//Maak uploads folder aan als hij nog niet bestaat
 $uploadDir = "uploads/";
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0777, true);
@@ -21,10 +21,10 @@ if (!is_dir($uploadDir)) {
 $filename = uniqid() . "_" . basename($file["name"]);
 $filepath = $uploadDir . $filename;
 
-// Move file to uploads folder
+//in de uploads folder t bestand opslaan
 if (move_uploaded_file($file["tmp_name"], $filepath)) {
 
-    // Save file path in database
+    //bestands pad opslaan in de database
     $pdo = new PDO("mysql:host=localhost;dbname=po_webapp;charset=utf8mb4", "root", "", [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
@@ -35,7 +35,7 @@ if (move_uploaded_file($file["tmp_name"], $filepath)) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         ":titel"    => $title,
-        ":data"     => $filepath,   // store file path, not base64
+        ":data"     => $filepath,
         ":eigenaar" => $owner
     ]);
 
