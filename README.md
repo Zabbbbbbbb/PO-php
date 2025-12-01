@@ -48,3 +48,11 @@ https://uiverse.io/mrhyddenn/slippery-bear-64
 https://www.w3schools.com/php/
 
 ChatGPT (voor uitleg, voorbeelden en controle)
+
+
+Om onze website te gebruiken kan je inloggen als gast of op een bestaand account inloggen. Elk account kan de toegevoegde fotos en berichten zien van andere account maar kan ze niet verwijderen. Je kan wel je eigen fotos verwijderen. Hier zijn een aantal accounts waarop ingelogd kan worden:
+1. naam: admine ww: admin123
+2. naam: emma ww: 1234
+3. naam: johan ww: wachtwoord1
+4. naam: milan ww: test123
+5. naam: sophie ww: securepass
